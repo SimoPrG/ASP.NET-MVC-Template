@@ -9,6 +9,7 @@
 
     using MvcTemplate.Data;
     using MvcTemplate.Data.Common;
+    using MvcTemplate.Services.Data;
 
     // http://docs.autofac.org/en/latest/integration/mvc.html
     public static class AutofacConfig
@@ -43,6 +44,8 @@
 
         public static void RegisterServices(ContainerBuilder builder)
         {
+            var servicesAssembly = Assembly.GetAssembly(typeof(IJokesService));
+            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
             builder.Register(c => new ApplicationDbContext()).As<DbContext>().InstancePerRequest();
             builder.RegisterGeneric(typeof(DbRepository<>)).As(typeof(IDbRepository<>)).InstancePerRequest();
         }
