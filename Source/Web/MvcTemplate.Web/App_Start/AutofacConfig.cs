@@ -9,7 +9,9 @@
 
     using MvcTemplate.Data;
     using MvcTemplate.Data.Common;
+    using MvcTemplate.Services.Common;
     using MvcTemplate.Services.Data;
+    using MvcTemplate.Web.Controllers;
 
     // http://docs.autofac.org/en/latest/integration/mvc.html
     public static class AutofacConfig
@@ -44,10 +46,18 @@
 
         public static void RegisterServices(ContainerBuilder builder)
         {
+            builder.RegisterType<HttpRuntimeCacheService>().As<ICacheService>();
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                .AssignableTo<BaseController>()
+                .PropertiesAutowired();
+
             var servicesAssembly = Assembly.GetAssembly(typeof(IJokesService));
             builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+
             builder.Register(c => new ApplicationDbContext()).As<DbContext>().InstancePerRequest();
             builder.RegisterGeneric(typeof(DbRepository<>)).As(typeof(IDbRepository<>)).InstancePerRequest();
+
+            builder.RegisterType<BaseController>().PropertiesAutowired();
         }
     }
 }

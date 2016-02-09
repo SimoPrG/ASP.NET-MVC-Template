@@ -198,6 +198,7 @@
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
@@ -317,6 +318,10 @@
     <ProjectReference Include="..\..\Data\MvcTemplate.Data\MvcTemplate.Data.csproj">
       <Project>{A3BB0CAC-D899-42AC-8C1D-C24696696A6E}</Project>
       <Name>MvcTemplate.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\MvcTemplate.Services.Common\MvcTemplate.Services.Common.csproj">
+      <Project>{F7AD0C82-2438-4A77-B861-6740C7A3BD68}</Project>
+      <Name>MvcTemplate.Services.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\MvcTemplate.Services.Data\MvcTemplate.Services.Data.csproj">
       <Project>{0001EA0D-288B-41A5-981B-51DBBB525AED}</Project>
