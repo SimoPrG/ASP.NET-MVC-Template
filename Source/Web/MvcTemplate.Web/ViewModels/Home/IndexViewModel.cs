@@ -6,6 +6,6 @@
     {
         public IEnumerable<JokeViewModel> RandomJokes { get; set; }
 
-        public IEnumerable<JokeCategoryVIewModel> Categories { get; set; }
+        public IEnumerable<JokeCategoryViewModel> Categories { get; set; }
     }
 }

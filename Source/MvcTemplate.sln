@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{E3D09B8D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JokesCrawler", "Tools\JokesCrawler\JokesCrawler.csproj", "{FB6DF971-342C-4C7B-8E5A-C2C49F2B1054}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTemplate.Web.Infrastructure", "Web\MvcTemplate.Web.Infrastructure\MvcTemplate.Web.Infrastructure.csproj", "{7384A202-C39A-489F-BEA4-E4C1CD7FB501}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{FB6DF971-342C-4C7B-8E5A-C2C49F2B1054}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB6DF971-342C-4C7B-8E5A-C2C49F2B1054}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB6DF971-342C-4C7B-8E5A-C2C49F2B1054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7384A202-C39A-489F-BEA4-E4C1CD7FB501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7384A202-C39A-489F-BEA4-E4C1CD7FB501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7384A202-C39A-489F-BEA4-E4C1CD7FB501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7384A202-C39A-489F-BEA4-E4C1CD7FB501}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +65,6 @@ Global
 		{495585BA-0EF9-4A68-9463-54735EFF0CB8} = {8103CD5B-2A92-401C-A854-A31E0FD44DE6}
 		{287773F1-0F3F-4DDC-95E0-3F5AE11E87DC} = {8103CD5B-2A92-401C-A854-A31E0FD44DE6}
 		{FB6DF971-342C-4C7B-8E5A-C2C49F2B1054} = {E3D09B8D-CC49-4961-BE73-4B71F4A90753}
+		{7384A202-C39A-489F-BEA4-E4C1CD7FB501} = {99FC36D3-D963-4263-BF69-8BD11F801E2B}
 	EndGlobalSection
 EndGlobal

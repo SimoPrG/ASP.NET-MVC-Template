@@ -4,8 +4,11 @@
     using System.Linq;
     using System.Web.Mvc;
 
+    using AutoMapper.QueryableExtensions;
+
     using MvcTemplate.Data.Common;
     using MvcTemplate.Data.Models;
+    using MvcTemplate.Web.Infrastructure.Mapping;
     using MvcTemplate.Web.ViewModels.Home;
 
     public class HomeController : Controller
@@ -22,17 +25,8 @@
 
         public ActionResult Index()
         {
-            var randomJokes =
-                this.jokes.All()
-                    .OrderBy(x => Guid.NewGuid())
-                    .Select(x => new JokeViewModel { Id = x.Id, Content = x.Content, CategoryName = x.Category.Name })
-                    .Take(3)
-                    .ToList();
-            var categories =
-                this.jokeCategories.All()
-                    .OrderBy(x => x.Name)
-                    .Select(x => new JokeCategoryVIewModel { Id = x.Id, Name = x.Name })
-                    .ToList();
+            var randomJokes = this.jokes.All().OrderBy(x => Guid.NewGuid()).To<JokeViewModel>().Take(3).ToList();
+            var categories = this.jokeCategories.All().OrderBy(x => x.Name).To<JokeCategoryViewModel>().ToList();
             var viewModel = new IndexViewModel { RandomJokes = randomJokes, Categories = categories };
             return this.View(viewModel);
         }

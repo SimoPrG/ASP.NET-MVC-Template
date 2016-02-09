@@ -1,6 +1,9 @@
 ﻿namespace MvcTemplate.Web.ViewModels.Home
 {
-    public class JokeCategoryVIewModel
+    using MvcTemplate.Data.Models;
+    using MvcTemplate.Web.Infrastructure.Mapping;
+
+    public class JokeCategoryViewModel : IMapFrom<JokeCategory>
     {
         public int Id { get; set; }
 

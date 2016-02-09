@@ -1,6 +1,7 @@
 ﻿namespace MvcTemplate.Web
 {
     using System.Data.Entity;
+    using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Optimization;
@@ -8,6 +9,7 @@
 
     using MvcTemplate.Data;
     using MvcTemplate.Data.Migrations;
+    using MvcTemplate.Web.Infrastructure.Mapping;
 
 #pragma warning disable SA1649 // File name must match first type name
     public class MvcApplication : HttpApplication
@@ -21,6 +23,9 @@
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var autoMapperConfig = new AutoMapperConfig();
+            autoMapperConfig.Execute(Assembly.GetExecutingAssembly());
         }
     }
 }
