@@ -200,8 +200,6 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
-    <Compile Include="ViewModels\ApplicationDbContext.cs" />
-    <Compile Include="ViewModels\ApplicationUser.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
@@ -292,6 +290,16 @@
     <AdditionalFiles Include="..\..\stylecop.json">
       <Link>stylecop.json</Link>
     </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\MvcTemplate.Data.Models\MvcTemplate.Data.Models.csproj">
+      <Project>{495585BA-0EF9-4A68-9463-54735EFF0CB8}</Project>
+      <Name>MvcTemplate.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\MvcTemplate.Data\MvcTemplate.Data.csproj">
+      <Project>{A3BB0CAC-D899-42AC-8C1D-C24696696A6E}</Project>
+      <Name>MvcTemplate.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
