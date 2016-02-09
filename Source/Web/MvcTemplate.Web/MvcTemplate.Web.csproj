@@ -301,6 +301,10 @@
     </AdditionalFiles>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\MvcTemplate.Data.Common\MvcTemplate.Data.Common.csproj">
+      <Project>{287773F1-0F3F-4DDC-95E0-3F5AE11E87DC}</Project>
+      <Name>MvcTemplate.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\MvcTemplate.Data.Models\MvcTemplate.Data.Models.csproj">
       <Project>{495585BA-0EF9-4A68-9463-54735EFF0CB8}</Project>
       <Name>MvcTemplate.Data.Models</Name>

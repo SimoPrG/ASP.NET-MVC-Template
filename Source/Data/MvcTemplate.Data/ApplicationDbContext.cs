@@ -16,6 +16,10 @@
         {
         }
 
+        public DbSet<JokeCategory> JokeCategories { get; set; }
+
+        public DbSet<Joke> Jokes { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

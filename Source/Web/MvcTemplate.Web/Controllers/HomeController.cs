@@ -10,7 +10,7 @@
         public ActionResult Index()
         {
             var db = new ApplicationDbContext();
-            var usersCount = db.Users.Count();
+            var usersCount = db.Jokes.Count();
             return this.View();
         }
 

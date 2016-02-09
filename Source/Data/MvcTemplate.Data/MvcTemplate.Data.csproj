@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201602092048590_InitialCreate.Designer.cs">
       <DependentUpon>201602092048590_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602092101230_JokesAndCategories.cs" />
+    <Compile Include="Migrations\201602092101230_JokesAndCategories.Designer.cs">
+      <DependentUpon>201602092101230_JokesAndCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,6 +87,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602092048590_InitialCreate.resx">
       <DependentUpon>201602092048590_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602092101230_JokesAndCategories.resx">
+      <DependentUpon>201602092101230_JokesAndCategories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
