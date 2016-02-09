@@ -1,7 +1,6 @@
 ﻿namespace MvcTemplate.Web
 {
     using System.Data.Entity;
-    using System.Diagnostics;
     using System.Reflection;
     using System.Web.Mvc;
 
@@ -9,6 +8,7 @@
     using Autofac.Integration.Mvc;
 
     using MvcTemplate.Data;
+    using MvcTemplate.Data.Common;
 
     // http://docs.autofac.org/en/latest/integration/mvc.html
     public static class AutofacConfig
@@ -44,6 +44,7 @@
         public static void RegisterServices(ContainerBuilder builder)
         {
             builder.Register(c => new ApplicationDbContext()).As<DbContext>().InstancePerRequest();
+            builder.RegisterGeneric(typeof(DbRepository<>)).As(typeof(IDbRepository<>)).InstancePerRequest();
         }
     }
 }
