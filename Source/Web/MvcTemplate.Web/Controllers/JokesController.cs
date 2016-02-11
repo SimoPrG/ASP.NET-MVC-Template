@@ -1,14 +1,14 @@
-﻿using MvcTemplate.Services.Data;
-using MvcTemplate.Services.Web;
-using MvcTemplate.Web.Infrastructure.Mapping;
-using MvcTemplate.Web.ViewModels.Home;
-using System.Web.Mvc;
-
-namespace MvcTemplate.Web.Controllers
+﻿namespace MvcTemplate.Web.Controllers
 {
+    using System.Web.Mvc;
+
+    using MvcTemplate.Services.Data;
+    using MvcTemplate.Web.Infrastructure.Mapping;
+    using MvcTemplate.Web.ViewModels.Home;
+
     public class JokesController : BaseController
     {
-        private IJokesService jokes;
+        private readonly IJokesService jokes;
 
         public JokesController(
             IJokesService jokes)
@@ -19,7 +19,7 @@ namespace MvcTemplate.Web.Controllers
         public ActionResult ById(string id)
         {
             var joke = this.jokes.GetById(id);
-            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<JokeViewModel>(joke);
+            var viewModel = this.Mapper.Map<JokeViewModel>(joke);
             return this.View(viewModel);
         }
     }
